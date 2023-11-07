@@ -1,0 +1,285 @@
+/* ESTILOS GENERICOS PARA TODAS LAS PAGINAS */
+
+/* Reset de estilos para eliminar los márgenes y rellenos predeterminados */
+body, h1, h2, h3, ul, li, p, hr {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el encabezado (header) */
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilo para el título (h1) */
+h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+/* Estilo para la barra de navegación (nav) */
+nav ul {
+    list-style: none;
+    background-color: #333;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+/* Estilo para el contenido principal (main) */
+main {
+    padding: 20px;
+    margin: 2em;
+}
+
+/* Estilo para el subtítulo en el contenido principal (h3) */
+main h3 {
+    font-style: italic;
+}
+
+/* Estilo para los enlaces en el contenido principal (a) */
+main a {
+    text-decoration: none;
+    color: #0077cc;
+    font-weight: bold;
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Estilo para la lista no ordenada (ul) en el pie de página */
+footer ul {
+    list-style: none;
+    display: flex; /* Convierte la lista en un flex container */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* Estilo para los elementos de la lista (li) en el pie de página horizontal */
+footer li {
+    margin: 0 60px; /* Agrega margen entre los elementos */
+}
+
+/* Estilo para los enlaces en los elementos de la lista (li) */
+footer li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Estilo para el contenedor del copyright */
+.copyright-container {
+    display: flex; /* Convierte el contenedor en un flex container */
+    align-items: center; /* Centra verticalmente los elementos en el contenedor */
+    margin-right: 20px; /* Agrega margen a la derecha */
+}
+
+/* Estilo para la imagen de copyright */
+.copyright-image {
+    width: 16px; /* Ancho de la imagen de copyright */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 10px; /* Agrega margen a la derecha de la imagen */
+}
+
+/* Estilo para el elemento de copyright */
+.copyright {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* ESTILOS PARA PAGINA INDEX */
+
+/* Estilo para el contenedor principal */
+#container {
+    min-height: 100%;
+    position: relative;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Estilo para el artículo (article) */
+.article {
+    margin: 20px; /* Ajustado el margen para centrar */
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Estilo para el título del artículo (h2) */
+.article h2 {
+    text-decoration: underline;
+}
+
+
+/* Estilo para la imagen (img) */
+/* Estilo para el contenedor de la imagen */
+.image-container {
+    width: 300px; /* Ancho fijo de la imagen */
+    width: 35%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    border: 1px solid #333; /* Borde con un color específico */
+    box-shadow: 3px 3px 5px #888; /* Sombra */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Estilo para la imagen dentro del contenedor */
+.image {
+    width: 100%; /* Ajusta la imagen al 100% del ancho del contenedor */
+    height: auto; /* Altura automática para mantener la proporción */
+}
+
+
+/* ESTILOS PARA PAGINA ACERCA DE */
+
+.h4 {
+    font-size: 24px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    text-align: justify;
+    margin: 20px;
+}
+
+/* ESTILOS PARA PAGINA CATALOGO */
+
+/* Estilo para el contenedor de catálogo */
+.catalogo-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+}
+
+/* Estilo para la lista no ordenada (ul) del catálogo */
+.catalogo-ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea */
+}
+
+/* Estilo para los elementos de la lista (li) del catálogo */
+.catalogo-ul li {
+    margin: 10px;
+    flex: 0 0 calc(30% - 20px); /* Establece el ancho de cada elemento en un 30% con márgenes */
+    max-width: calc(30% - 20px); /* Ancho máximo de cada elemento */
+}
+
+/* Estilo para la imagen del catálogo */
+.catalogo-ul img {
+    width: 100%; /* Ajusta la imagen al 100% del ancho del contenedor */
+    height: auto;
+    border: 1px solid #333;
+}
+
+/* Estilo para las cajas de modelos */
+.model-box {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%; /* Ancho del contenedor de modelo */
+    display: inline-block; /* Para que las cajas de modelo estén en línea */
+}
+
+/* Estilo para el título de los modelos */
+.model-box h2 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+/* Estilo para la descripción de los modelos */
+.model-box p {
+    font-size: 14px;
+}
+
+/* Estilo para la caja del modelo promocional */
+.model-box.model-promo {
+    border: 1px solid #ffcc00; /* Borde de color en lugar de fondo */
+    text-align: center;
+    padding: 20px;
+    width: 60%; /* Ancho de la caja promocional */
+    margin: 0 auto; /* Centrar horizontalmente en la página */
+    display: block; /* Hace que la caja sea un bloque para centrar verticalmente */
+}
+
+/* Estilo para la título del modelo promocional */
+.model-box.model-promo h2 {
+    font-size: 24px;
+    color: #333; /* Cambia el color del título */
+}
+
+/* Estilo para la descripción del modelo promocional */
+.model-box.model-promo p {
+    font-size: 16px;
+    color: #333; /* Cambia el color del texto de la descripción */
+}
+
+/* Estilo para la imagen dentro de la caja promocional */
+.model-box.model-promo img {
+    max-width: 100%; /* Hace que la imagen se ajuste al ancho de la caja */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina cualquier espacio adicional alrededor de la imagen */
+    margin: 0 auto; /* Centra horizontalmente en la caja promocional */
+}
+
+/* ESTILOS PARA PAGINA UBICACION */
+aside {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+/* ESTILOS PARA PAGINA CONTACTO */
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 80px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}

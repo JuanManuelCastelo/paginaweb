@@ -1,0 +1,31 @@
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = $_POST["nombre"];
+    $surname = $_POST["apellido"];
+    $email = $_POST["correo"];
+    $message = $_POST["mensaje"];
+
+    // Validate input
+    if (empty($name) || empty($surname) || empty($email) || empty($message)) {
+        echo "Por favor completa todos los campos.";
+    } else if (!preg_match("/^[a-zA-Z ]*$/",$surname)) {
+        echo "El apellido solo debe contener letras y espacios en blanco.";
+    } else if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+        echo "El nombre solo debe contener letras y espacios en blanco.";
+    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "El correo electrónico no es válido.";
+    } else if (strlen($message) < 10) {
+        echo "El mensaje debe tener al menos 10 caracteres.";
+    } else {
+        // Send email
+        $to = "youremail@example.com";
+        $subject = "Nuevo mensaje de $name";
+        $body = "Name: $name $surname\nEmail: $email\n\n$message";
+        $headers = "From: $email";
+
+        if (mail($to, $subject, $body, $headers)) {
+            echo "Enviado de manera correcta!";
+        } else {
+            echo "Error enviando el mensaje.";
+        }
+    }
+}

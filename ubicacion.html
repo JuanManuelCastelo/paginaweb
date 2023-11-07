@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAghyDtlsbxy5ryjSNYksaHmU7mKbiY_DE&libraries=places&callback=initMap" async defer></script>
+    <title>Sucursales</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li><a>Hero Motos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="catalogo.html">Modelos</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Elige la sucursal segun tu ubicacion</h1>
+
+        <ul>
+            <li><p>Av del Libertador 100, Vicente Lopez</p></li>
+            <li><p>Av del Libertador 13044, Vicente Lopez</p></li>
+            <li><p>Cordoba 2560, Vicente Lopez</p></li>
+            <li><p>Paraguay 1401, Caba</p></li>
+            <li><p>Helguera 3071, Villa del parque</p></li>
+            <li><p>Roma 650,Olivos</p></li>
+        </ul>
+        
+    </main>
+
+    <aside>
+        <div id="map" style="height: 500px; width: 100%;"></div>
+        <script>
+            function initMap() {
+                const ubicacion = { lat: -34.5375, lng: -58.4895 }; // Coordenadas para ubicar el mapa
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 14, // Nivel de zoom
+                    center: ubicacion,
+                });
+    
+                const marker = new google.maps.Marker({
+                    position: ubicacion,
+                    map: map,
+                    title: "Ubicación de la sucursal",
+                });
+    
+                // Agrega una barra de búsqueda
+                const input = document.createElement("input");
+                input.id = "searchInput";
+                input.placeholder = "Buscar dirección...";
+                input.style.width = "100%";
+                const searchBox = new google.maps.places.SearchBox(input);
+                map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+    
+                // Escucha cambios en la barra de búsqueda
+                searchBox.addListener("places_changed", () => {
+                    const places = searchBox.getPlaces();
+    
+                    if (places.length == 0) {
+                        return;
+                    }
+    
+                    // Obtiene la primera ubicación
+                    const place = places[0];
+    
+                    // Centra el mapa en la ubicación seleccionada
+                    map.setCenter(place.geometry.location);
+    
+                    // Mueve el marcador a la ubicación seleccionada
+                    marker.setPosition(place.geometry.location);
+                });
+            }
+        </script>
+    </aside>
+    
+
+    <footer>
+        <ul>
+            <li class="copyright-container">
+                <img src="img/copyright.png" alt="Copyright" class="copyright-image">
+                <div class="copyright">Todos los derechos reservados 2021 Hero Motos Latam</div>
+            </li>
+            <li><a href="#">Términos y condiciones</a></li>
+            <li><a href="#">Inversionistas</a></li>
+            <li><a href="#">Hero en India</a></li>
+        </ul>
+    </footer>
+    
+    
+</body>
+</html>
+
